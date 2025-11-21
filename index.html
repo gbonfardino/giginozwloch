@@ -60,10 +60,13 @@
       justify-content: center;
       margin-bottom: 16px;
     }
-
-    .logo img {
-      height: 72px; /* cambia in base al tuo logo */
-      width: auto;
+    .logo-img {
+  width: 140px;           /* dimensione del logo */
+  height: 140px;
+  border-radius: 50%;     /* rende il logo tondo */
+  object-fit: cover;      /* evita distorsioni */
+  border: 3px solid #eadcc7; /* opzionale - piccolo bordo elegante */
+}
     }
 
     .headline {
@@ -302,7 +305,7 @@
       <!-- LOGO -->
       <div class="logo">
         <!-- Sostituisci src con il tuo logo -->
-        <img src="logo.jpg" alt="Gigino z Włoch" />
+       <img src="logo.jpg" alt="Gigino z Włoch" class="logo-img" />
       </div>
 
       <!-- TITOLO + SOTTOTITOLO -->
