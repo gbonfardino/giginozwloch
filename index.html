@@ -1,72 +1,463 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gigino z Włoch</title>
+
   <style>
-    body {
+    /* ---------- RESET SEMPLICE ---------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #FAEEDB;
-      font-family: Arial, sans-serif;
-      color: #3D2B1F;
-      text-align: center;
     }
 
-    header {
-      padding: 40px 20px;
-    }
-
-    header img {
-      width: 220px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      margin: 20px 0 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 20px;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: #fbf1dc; /* colore che avevi scelto */
+      color: #3b2b20;
       line-height: 1.5;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 22px;
-      background: #A44732;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    footer {
-      margin-top: 40px;
-      padding: 20px;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------- LAYOUT PRINCIPALE ---------- */
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 960px;
+      background-color: #fdf9f1;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+      padding: 32px 24px 40px;
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        padding: 40px 56px 48px;
+      }
+    }
+
+    /* ---------- HEADER ---------- */
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .logo img {
+      height: 72px; /* cambia in base al tuo logo */
+      width: auto;
+    }
+
+    .headline {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .headline h1 {
+      font-size: 2.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .headline h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #7a6a58;
+    }
+
+    .intro-text {
+      text-align: center;
+      max-width: 640px;
+      margin: 18px auto 24px;
+      font-size: 0.98rem;
+      color: #4b3b2b;
+    }
+
+    .cta-main {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background-color: #c33a2f;
+      color: #fff7f2;
+      font-weight: 600;
+      font-size: 0.98rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.18s ease, transform 0.18s ease,
+        box-shadow 0.18s ease;
+      box-shadow: 0 10px 20px rgba(195, 58, 47, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: #a72f26;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(195, 58, 47, 0.45);
+    }
+
+    /* ---------- FOTO FAMIGLIA ---------- */
+    .hero-image {
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    /* ---------- SEZIONE PERCHÉ PANETTONE ---------- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .section-title h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .reasons-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .reason-card {
+      background-color: #f7efe0;
+      border-radius: 16px;
+      padding: 16px 18px 18px;
+      text-align: center;
+      border: 1px solid #eadcc7;
+    }
+
+    .reason-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      background-color: #fdf9f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem; /* qui metti icone vere se vuoi */
+    }
+
+    .reason-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+    }
+
+    .reason-text {
       font-size: 0.9rem;
+      color: #6b5b48;
+    }
+
+    /* ---------- GRIGLIA PRODOTTI ---------- */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .product-card {
+      background-color: #f7efe0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #eadcc7;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .product-body {
+      padding: 10px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .product-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .product-desc {
+      font-size: 0.86rem;
+      color: #6b5b48;
+      flex: 1;
+    }
+
+    .product-cta {
+      margin-top: 8px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid #c33a2f;
+      color: #c33a2f;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+      transition: background-color 0.16s ease, color 0.16s ease;
+    }
+
+    .btn-outline:hover {
+      background-color: #c33a2f;
+      color: #fff7f2;
+    }
+
+    /* ---------- FOOTER / CONTATTI ---------- */
+    .footer {
+      border-top: 1px solid #eadcc7;
+      padding-top: 18px;
+      font-size: 0.88rem;
+      color: #6b5b48;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .footer-top span {
+      display: block;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom img {
+      height: 22px;
+      width: auto;
+    }
+
+    @media (min-width: 600px) {
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="page-wrapper">
+    <main class="card">
+      <!-- LOGO -->
+      <div class="logo">
+        <!-- Sostituisci src con il tuo logo -->
+        <img src="images/logo-gigino.png" alt="Gigino z Włoch" />
+      </div>
 
-  <header>
-    <img src="logo.jpg" alt="Gigino z Włoch Logo">
-    <h1>Gigino z Włoch</h1>
-    <p>Prawdziwe włoskie produkty z Puglii. Ręcznie robione, rodzinne receptury, dostawa z Warszawy.</p>
-    <a class="btn" href="#" target="_blank">Zobacz produkty na Allegro</a>
-  </header>
+      <!-- TITOLO + SOTTOTITOLO -->
+      <header class="headline">
+        <h1>Gigino z Włoch</h1>
+        <h2>O nas / Kim jesteśmy</h2>
+      </header>
 
-  <footer>
-    © 2025 Gigino z Włoch — Wszystkie prawa zastrzeżone.
-  </footer>
+      <!-- TESTO INTRO (lo riscriveremo meglio quando hai le info di tua cugina) -->
+      <p class="intro-text">
+        Jesteśmy rodzinnym laboratorium z Apulii, specjalizującym się w
+        rzemieślniczych panettone. Wypiekamy je ręcznie, jak w domu, według
+        włoskiej tradycji, a następnie wysyłamy prosto do Polski – dla
+        klientów, którzy chcą poczuć prawdziwy smak Włoch.
+      </p>
 
+      <!-- CTA PRINCIPALE -->
+      <div class="cta-main">
+        <a href="#" class="btn-primary">Kup panettone na Allegro</a>
+      </div>
+
+      <!-- FOTO FAMIGLIA -->
+      <section class="hero-image">
+        <!-- Sostituisci con la foto del gruppo -->
+        <img src="images/family-bakery.jpg" alt="Rodzinne laboratorium w Apulii" />
+      </section>
+
+      <!-- PERCHÉ I NOSTRI PANETTONI -->
+      <section>
+        <div class="section-title">
+          <h3>Dlaczego nasze panettone?</h3>
+        </div>
+
+        <div class="reasons-grid">
+          <!-- 1: Ręcznie robione -->
+          <article class="reason-card">
+            <div class="reason-icon">✋</div>
+            <h4 class="reason-title">Ręcznie robione</h4>
+            <p class="reason-text">
+              Każdy panettone powstaje w małej pracowni, wyrabiany ręcznie
+              przez doświadczonych rzemieślników z Apulii.
+            </p>
+          </article>
+
+          <!-- 2: Naturalne składniki (rametto) -->
+          <article class="reason-card">
+            <div class="reason-icon">🌿</div>
+            <h4 class="reason-title">Naturalne składniki</h4>
+            <p class="reason-text">
+              Używamy starannie wyselekcjonowanych składników, bez
+              sztucznych aromatów – tylko to, co naprawdę potrzebne.
+            </p>
+          </article>
+
+          <!-- 3: Świeże dostawy z Włoch (camioncino) -->
+          <article class="reason-card">
+            <div class="reason-icon">🚚</div>
+            <h4 class="reason-title">Świeże dostawy z Włoch</h4>
+            <p class="reason-text">
+              Wypiekamy we Włoszech i wysyłamy bezpośrednio do Polski, aby
+              dotarły miękkie, pachnące i świeże.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRODOTTI -->
+      <section class="products-grid">
+        <!-- Prodotto 1 -->
+        <article class="product-card">
+          <img
+            src="images/panettone-1.jpg"
+            alt="Panettone klasyczny"
+            class="product-image"
+          />
+          <div class="product-body">
+            <h4 class="product-name">Panettone klasyczny</h4>
+            <p class="product-desc">
+              Tradycyjny włoski panettone z rodzynkami i skórką pomarańczy.
+            </p>
+            <div class="product-cta">
+              <a href="#" class="btn-outline">Kup na Allegro</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prodotto 2 -->
+        <article class="product-card">
+          <img
+            src="images/panettone-2.jpg"
+            alt="Panettone czekoladowy"
+            class="product-image"
+          />
+          <div class="product-body">
+            <h4 class="product-name">Panettone czekoladowy</h4>
+            <p class="product-desc">
+              Dla miłośników kakao – miękkie ciasto pełne kawałków czekolady.
+            </p>
+            <div class="product-cta">
+              <a href="#" class="btn-outline">Kup na Allegro</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prodotto 3 -->
+        <article class="product-card">
+          <img
+            src="images/panettone-3.jpg"
+            alt="Panettone pistacjowy"
+            class="product-image"
+          />
+          <div class="product-body">
+            <h4 class="product-name">Panettone pistacjowy</h4>
+            <p class="product-desc">
+              Nadzienie z kremu pistacjowego i chrupiąca posypka z orzechów.
+            </p>
+            <div class="product-cta">
+              <a href="#" class="btn-outline">Kup na Allegro</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Prodotto 4 -->
+        <article class="product-card">
+          <img
+            src="images/panettone-4.jpg"
+            alt="Edizione limitata"
+            class="product-image"
+          />
+          <div class="product-body">
+            <h4 class="product-name">Edizione limitata</h4>
+            <p class="product-desc">
+              Specjalne połączenia smaków dostępne tylko w krótkim sezonie.
+            </p>
+            <div class="product-cta">
+              <a href="#" class="btn-outline">Kup na Allegro</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- FOOTER / CONTATTI -->
+      <footer class="footer">
+        <div class="footer-top">
+          <span>Zamówienia hurtowe / Pre-order</span>
+          <span>tel. +48 877 162 725 (WhatsApp)</span>
+          <span>kontakt@giginozwloch.pl</span>
+        </div>
+        <div class="footer-bottom">
+          <span>Gigino z Włoch – oficjalny dystrybutor w Polsce</span>
+          <!-- Logo Allegro fittizio -->
+          <img src="images/allegro-logo.png" alt="Allegro" />
+        </div>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
