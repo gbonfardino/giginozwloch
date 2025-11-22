@@ -54,83 +54,64 @@
       }
     }
 
-   /* ---------- HEADER ---------- */
-.logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-}
+    /* ---------- HEADER ---------- */
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
 
-.logo-img {
-  width: 140px;          /* dimensione del logo */
-  height: 140px;
-  border-radius: 50%;    /* logo tondo */
-  object-fit: cover;     /* evita distorsioni */
-  border: 3px solid #eadcc7;  /* bordo elegante */
-  display: block;        /* importantissimo */
-}
+    .logo-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #eadcc7;
+      display: block;
+    }
 
-/* Titolo + sottotitolo */
-.headline {
-  text-align: center !important;
-  width: 100%;
-  margin: 0 auto 16px auto;
-}
+    /* Titolo + sottotitolo */
+    .headline {
+      text-align: center !important;
+      width: 100%;
+      margin: 0 auto 16px auto;
+    }
 
-.headline h1,
-.headline h2 {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
+    .headline h1,
+    .headline h2 {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
 
-.headline h1 {
-  font-size: 2.4rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
+    .headline h1 {
+      font-size: 2.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
 
-.headline h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #7a6a58;
-}
+    .headline h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #7a6a58;
+    }
 
+    /* ---------- TESTO INTRO ---------- */
     .intro-text {
-  text-align: center;
-  max-width: 640px;
-  margin: 18px auto 24px;
-  font-size: 0.98rem;
-  color: #4b3b2b;
-}
+      text-align: center;
+      max-width: 700px;
+      margin: 18px auto 30px;
+      font-size: 0.98rem;
+      color: #4b3b2b;
+    }
 
-.intro-text p {
-  margin-bottom: 10px;       /* spazio tra i paragrafi */
-}
-    .intro-text {
-  text-align: center;
-  max-width: 640px;
-  margin: 18px auto 24px;
-  font-size: 0.98rem;
-  color: #4b3b2b;
-}
+    .intro-text p {
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
 
-.intro-text p {
-  margin-bottom: 10px;
-}
-
-/* Intro centrata e più elegante */
-.centered {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 30px auto;
-}
-
-.centered p {
-  margin-bottom: 12px;
-  line-height: 1.55;
-}
+    /* ---------- CTA PRINCIPALE ---------- */
     .cta-main {
       display: flex;
       justify-content: center;
@@ -153,10 +134,25 @@
         box-shadow 0.18s ease;
       box-shadow: 0 10px 20px rgba(195, 58, 47, 0.35);
     }
+
+    .btn-primary:hover {
+      background-color: #a72f26;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(195, 58, 47, 0.45);
+    }
+
+    /* ---------- FOTO FAMIGLIA ---------- */
+    .hero-image {
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    /* ---------- CTA TIKTOK ---------- */
     .cta-tiktok {
       display: flex;
       justify-content: center;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
     .btn-tiktok {
@@ -194,31 +190,6 @@
       height: auto;
       display: block;
     }
-
-    .btn-primary:hover {
-      background-color: #a72f26;
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(195, 58, 47, 0.45);
-    }
-
-    /* ---------- FOTO FAMIGLIA ---------- */
-    .hero-image {
-      border-radius: 18px;
-      overflow: hidden;
-      margin-bottom: 40px;
-    }
- <!-- CTA TIKTOK -->
-      <div class="cta-tiktok">
-        <a href="https://www.tiktok.com/@TUOACCOUNT" 
-           class="btn-tiktok" 
-           target="_blank" 
-           rel="noopener">
-          <span class="tiktok-icon">
-            <img src="tiktok-logo.svg" alt="" />
-          </span>
-          Zobacz nas na TikToku
-        </a>
-      </div>
 
     /* ---------- SEZIONE PERCHÉ PANETTONE ---------- */
     .section-title {
@@ -262,7 +233,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem; /* qui metti icone vere se vuoi */
+      font-size: 1.4rem;
     }
 
     .reason-title {
@@ -392,36 +363,34 @@
   <div class="page-wrapper">
     <main class="card">
       <!-- LOGO -->
-<div class="logo">
-  <img src="logo.jpg" alt="Gigino z Włoch" class="logo-img">
-</div>
+      <div class="logo">
+        <img src="logo.jpg" alt="Gigino z Włoch" class="logo-img" />
+      </div>
 
-<!-- TITOLO + SOTTOTITOLO -->
-<header class="headline">
-  <h1>GIGINO Z WŁOCH</h1>
-  <h2>O nas / Kim jesteśmy</h2>
-</header>
+      <!-- TITOLO + SOTTOTITOLO -->
+      <header class="headline">
+        <h1>GIGINO Z WŁOCH</h1>
+        <h2>O nas / Kim jesteśmy</h2>
+      </header>
 
-      <!-- TESTO INTRO (lo riscriveremo meglio quando hai le info di tua cugina) -->
-    <section class="intro-text centered">
-  <p>
-    Dolci Pensieri to mała włoska pracownia z Apulii, gdzie tradycja łączy się z rodzinnym ciepłem. Powstaliśmy w Castellaneta Marina – miasteczku pachnącym piniowymi lasami i domowymi wypiekami.
-  </p>
+      <!-- TESTO INTRO -->
+      <section class="intro-text">
+        <p>
+          Dolci Pensieri to mała włoska pracownia z Apulii, gdzie tradycja łączy się z rodzinnym ciepłem. Powstaliśmy w Castellaneta Marina – miasteczku pachnącym piniowymi lasami i domowymi wypiekami.
+        </p>
 
-  <p>
-    Pasticcerię stworzyła <strong>Roberta</strong>, wspierana przez <strong>Gianluigiego</strong>, <strong>mamę Rosę</strong> i <strong>Lucię</strong> – zespół, który od lat pielęgnuje te same wartości: pasję, autentyczność i rzemiosło.
-  </p>
+        <p>
+          Pasticcerię stworzyła <strong>Roberta</strong>, wspierana przez <strong>Gianluigiego</strong>, <strong>mamę Rosę</strong> i <strong>Lucię</strong> – zespół, który od lat pielęgnuje te same wartości: pasję, autentyczność i rzemiosło.
+        </p>
 
-  <p>
-    Wszystko, co tworzymy, powstaje ręcznie, powoli i z miłością – tak, jak robiło się to kiedyś.
-  </p>
+        <p>
+          Wszystko, co tworzymy, powstaje ręcznie, powoli i z miłością – tak, jak robiło się to kiedyś.
+        </p>
 
-  <p>
-    Nasza zasada jest prosta: <strong>jakość ponad ilość</strong>. W każdym wypieku chcemy przekazać odrobinę włoskiej magii.
-  </p>
-</section>
-
-
+        <p>
+          Nasza zasada jest prosta: <strong>jakość ponad ilość</strong>. W każdym wypieku chcemy przekazać odrobinę włoskiej magii.
+        </p>
+      </section>
 
       <!-- CTA PRINCIPALE -->
       <div class="cta-main">
@@ -430,9 +399,22 @@
 
       <!-- FOTO FAMIGLIA -->
       <section class="hero-image">
-        <!-- Sostituisci con la foto del gruppo -->
+        <!-- Sostituisci con la foto del gruppo reale -->
         <img src="family-bakery.jpg" alt="Rodzinne laboratorium w Apulii" />
       </section>
+
+      <!-- CTA TIKTOK -->
+      <div class="cta-tiktok">
+        <a href="https://www.tiktok.com/@giginozwloch?"
+           class="btn-tiktok"
+           target="_blank"
+           rel="noopener">
+          <span class="tiktok-icon">
+            <img src="tiktok-logo.svg" alt="TikTok" />
+          </span>
+          Zobacz nas na TikToku
+        </a>
+      </div>
 
       <!-- PERCHÉ I NOSTRI PANETTONI -->
       <section>
@@ -451,7 +433,7 @@
             </p>
           </article>
 
-          <!-- 2: Naturalne składniki (rametto) -->
+          <!-- 2: Naturalne składniki -->
           <article class="reason-card">
             <div class="reason-icon">🌿</div>
             <h4 class="reason-title">Naturalne składniki</h4>
@@ -461,7 +443,7 @@
             </p>
           </article>
 
-          <!-- 3: Świeże dostawy z Włoch (camioncino) -->
+          <!-- 3: Świeże dostawy z Włoch -->
           <article class="reason-card">
             <div class="reason-icon">🚚</div>
             <h4 class="reason-title">Świeże dostawy z Włoch</h4>
@@ -537,7 +519,7 @@
             class="product-image"
           />
           <div class="product-body">
-            <h4 class="product-name">Edizione limitata - Biała czekolada i owoce leśne </h4>
+            <h4 class="product-name">Edizione limitata - Biała czekolada i owoce leśne</h4>
             <p class="product-desc">
               Słodycz białej czekolady przełamana półkandyzowanymi owocami leśnymi – świeży, owocowy smak z lekką nutą kwasowości.
             </p>
@@ -550,21 +532,14 @@
 
       <!-- FOOTER / CONTATTI -->
       <footer class="footer">
-  <div class="footer-top">
-    <span>Zamówienia hurtowe / Pre-order</span>
-
-    <span>
-      📞 +48 877 162 725
-    </span>
-
-    <span>
-      ✉️ kontakt@giginozwloch.pl
-    </span>
-  </div>
+        <div class="footer-top">
+          <span>Zamówienia hurtowe / Pre-order</span>
+          <span>📞 +48 877 162 725</span>
+          <span>✉️ kontakt@giginozwloch.pl</span>
+        </div>
 
         <div class="footer-bottom">
           <span>Gigino z Włoch – oficjalny dystrybutor w Polsce</span>
-          <!-- Logo Allegro fittizio -->
           <img src="Logo allegro.png" alt="Allegro" />
         </div>
       </footer>
