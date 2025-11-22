@@ -54,38 +54,48 @@
       }
     }
 
-    /* ---------- HEADER ---------- */
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    .logo-img {
-  width: 140px;           /* dimensione del logo */
-  height: 140px;
-  border-radius: 50%;     /* rende il logo tondo */
-  object-fit: cover;      /* evita distorsioni */
-  border: 3px solid #eadcc7; /* opzionale - piccolo bordo elegante */
+   /* ---------- HEADER ---------- */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
 }
-    }
 
-    .headline {
-      text-align: center;
-      margin-bottom: 16px;
-    }
+.logo-img {
+  width: 140px;          /* dimensione del logo */
+  height: 140px;
+  border-radius: 50%;    /* logo tondo */
+  object-fit: cover;     /* evita distorsioni */
+  border: 3px solid #eadcc7;  /* bordo elegante */
+  display: block;        /* importantissimo */
+}
 
-    .headline h1 {
-      font-size: 2.4rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
+/* Titolo + sottotitolo */
+.headline {
+  text-align: center !important;
+  width: 100%;
+  margin: 0 auto 16px auto;
+}
 
-    .headline h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #7a6a58;
-    }
+.headline h1,
+.headline h2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.headline h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.headline h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7a6a58;
+}
 
     .intro-text {
       text-align: center;
@@ -303,16 +313,15 @@
   <div class="page-wrapper">
     <main class="card">
       <!-- LOGO -->
-      <div class="logo">
-        <!-- Sostituisci src con il tuo logo -->
-       <img src="logo.jpg" alt="Gigino z Włoch" class="logo-img" />
-      </div>
+<div class="logo">
+  <img src="logo.jpg" alt="Gigino z Włoch" class="logo-img">
+</div>
 
-      <!-- TITOLO + SOTTOTITOLO -->
-      <header class="headline">
-        <h1>Gigino z Włoch</h1>
-        <h2>O nas / Kim jesteśmy</h2>
-      </header>
+<!-- TITOLO + SOTTOTITOLO -->
+<header class="headline">
+  <h1>GIGINO Z WŁOCH</h1>
+  <h2>O nas / Kim jesteśmy</h2>
+</header>
 
       <!-- TESTO INTRO (lo riscriveremo meglio quando hai le info di tua cugina) -->
       <p class="intro-text">
