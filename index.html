@@ -153,6 +153,47 @@
         box-shadow 0.18s ease;
       box-shadow: 0 10px 20px rgba(195, 58, 47, 0.35);
     }
+    .cta-tiktok {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .btn-tiktok {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background-color: #000;
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      transition: opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-tiktok:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .tiktok-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+
+    .tiktok-icon img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .btn-primary:hover {
       background-color: #a72f26;
@@ -166,6 +207,18 @@
       overflow: hidden;
       margin-bottom: 40px;
     }
+ <!-- CTA TIKTOK -->
+      <div class="cta-tiktok">
+        <a href="https://www.tiktok.com/@TUOACCOUNT" 
+           class="btn-tiktok" 
+           target="_blank" 
+           rel="noopener">
+          <span class="tiktok-icon">
+            <img src="tiktok-logo.svg" alt="" />
+          </span>
+          Zobacz nas na TikToku
+        </a>
+      </div>
 
     /* ---------- SEZIONE PERCHÉ PANETTONE ---------- */
     .section-title {
@@ -378,7 +431,7 @@
       <!-- FOTO FAMIGLIA -->
       <section class="hero-image">
         <!-- Sostituisci con la foto del gruppo -->
-        <img src="images/family-bakery.jpg" alt="Rodzinne laboratorium w Apulii" />
+        <img src="family-bakery.jpg" alt="Rodzinne laboratorium w Apulii" />
       </section>
 
       <!-- PERCHÉ I NOSTRI PANETTONI -->
